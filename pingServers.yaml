@@ -7,7 +7,7 @@
 
 ---
 - hosts: all
-  gather_facts: yes(or)no
+  gather_facts: yes(or)no [anyone yes(or) no take now]
   remote_user: ansible
   tasks:
     - name: Ping all Servers
