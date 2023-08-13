@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+  vars:
+    companyName: Pawan Tech
+    location: hyderabad
+  tasks:  
+   - name: Install Apache HTTP Server
+     yum:
+      name: httpd
+      state: latest
+   - name: Copy index.html file
+     template: 
+      src: index.html
+      dest: /var/www/html/index.html
+     notify:
+      - Re Start the Apache HTTP Server
+  handlers:
+   - name: Re Start the Apache HTTP Server
+     service:
+       name: httpd
+       enabled: yes
+       state: restarted        
+...      

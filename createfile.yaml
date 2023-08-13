@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+   - name: Creating files in Host Machines
+     file:
+      path: /tmp/Pawan.yaml
+      owenr: root
+      mode: 0755 
+      state: touch
+...
+
