@@ -5,3 +5,14 @@
       ping:
 ...
 
+---
+- hosts: all
+  gather_facts: yes(or)no
+  remote_user: ansible
+  tasks:
+    - name: Ping all Servers
+      ping:
+      remote_user: ansible
+...
+~
+
